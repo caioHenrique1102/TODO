@@ -1,4 +1,5 @@
 package com.caiodev.todo.Model.Entity;
+import com.caiodev.todo.DTO.TodoDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,5 +21,10 @@ public class TodoModel {
     private int prioridade;
     private boolean status;
 
+    public TodoModel(TodoDTO todoDTO) {
+        this.nome = todoDTO.nome();
+        this.descricao = todoDTO.descricao();
+        this.prioridade = todoDTO.prioridade();
 
+    }
 }
