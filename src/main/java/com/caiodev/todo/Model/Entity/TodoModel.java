@@ -25,6 +25,6 @@ public class TodoModel {
         this.nome = todoDTO.nome();
         this.descricao = todoDTO.descricao();
         this.prioridade = todoDTO.prioridade();
-
+        this.status = todoDTO.status();
     }
 }
