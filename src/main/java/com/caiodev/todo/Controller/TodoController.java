@@ -1,10 +1,7 @@
 package com.caiodev.todo.Controller;
-
 import com.caiodev.todo.DTO.TodoDTO;
 import com.caiodev.todo.Model.Entity.TodoModel;
 import com.caiodev.todo.Service.TodoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.SpringVersion;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,14 +38,9 @@ public class TodoController {
         return ResponseEntity.status(HttpStatus.GONE).build();
     }
 
-    @PutMapping("/Alterar/{id}")
+    @PutMapping("/alterar/{id}")
     public ResponseEntity<TodoModel> alterar(@PathVariable Long id, @RequestBody TodoDTO todoDTO){
         return ResponseEntity.ok(todoService.atualizar(id, new TodoModel(todoDTO)));
     }
-
-
-
-
-
 
 }

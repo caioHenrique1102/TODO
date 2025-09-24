@@ -4,8 +4,6 @@ import com.caiodev.todo.Model.Entity.TodoModel;
 import com.caiodev.todo.Model.Repository.TodoRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,7 +21,6 @@ public class TodoService {
     public List<TodoModel> listar(){
         Sort sort = Sort.by(Sort.Direction.ASC ,"prioridade" );
         return todoRepository.findAll(sort);
-
     }
 
     public TodoModel buscar(Long id){
@@ -38,8 +35,5 @@ public class TodoService {
         buscar(id);
         return todoRepository.save(todoModel);
     }
-
-
-
 
 }
